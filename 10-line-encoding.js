@@ -9,19 +9,27 @@
  */
 
 const lineEncoding = (s) => {
-  let count = 1;
-  let ans = "";
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === s[i + 1]) {
-      count++;
+  let count = 1; //1
+  let ans = ""; //1 
+  for (let i = 0; i < s.length; i++) { //5
+    if (s[i] === s[i + 1]) { //6
+      count++; //1
     } else {
-      if (count > 1) {
-        ans += count + s[i];
+      if (count > 1) { //2
+        ans += count + s[i]; //6
       } else {
-        ans += s[i];
+        ans += s[i]; //4
       }
-      count = 1;
+      count = 1; //1
     }
   }
-  return ans;
+  return ans; //1 
 };
+
+/**
+ * T10(n) = 1 + 1 + 5*n (6 + 1 + 2 + 6 + 4 + 1 ) + 1
+ * T10(n) = 2 + 5*n (20) + 1
+ * T10(n) = 5n(1) + 1
+ * T10(n) = n + 1 
+ * O(n) = n
+ */
